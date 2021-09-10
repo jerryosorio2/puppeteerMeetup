@@ -1,0 +1,26 @@
+{
+	"name": "puppeteermeetup",
+	"version": "1.0.0",
+	"description": "WebdriverIO meetup examples",
+	"main": "index.js",
+	"scripts": {
+		"basicExamples": "mocha --timeout=30000 ./tests/basicExamples.js",
+    "waitsExamples": "mocha --timeout=30000 ./tests/waitsExamples.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jerryosorio2/puppeteerMettup.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/jerryosorio2/puppeteerMettup/issues"
+	},
+	"homepage": "https://github.com/jerryosorio2/puppeteerMettup#readme",
+	"dependencies": {
+		"chai": "^4.3.4",
+		"mocha": "^9.1.1",
+		"prettier": "^2.4.0",
+		"puppeteer": "^10.2.0"
+	}
+}
