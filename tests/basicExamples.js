@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const iPhone = puppeteer.devices['iPhone 6'];
+const expect = require('chai').expect;
 
 describe('Basic Examples', () => {
 	it('Launch the browser', async () => {
@@ -34,6 +35,23 @@ describe('Basic Examples', () => {
 		const page = await browser.newPage();
 		await page.emulate(iPhone);
 		await page.goto('http://example.com/');
+		await browser.close();
+	});
+
+	it('Chai Assertions Exmaple', async () => {
+		const browser = await puppeteer.launch({
+			headless: false,
+			slowMo: 500,
+			devtools: false,
+		});
+		const pages = await browser.pages();
+		const currentPage = pages[0];
+		await currentPage.goto('http://example.com/');
+		const title = await currentPage.title();
+		const url = await currentPage.url();
+
+		expect(title).to.be.equal('Example Domain');
+		expect(url).to.be.equal('http://example.com/');
 		await browser.close();
 	});
 });
