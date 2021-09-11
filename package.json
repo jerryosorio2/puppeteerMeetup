@@ -5,7 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"basicExamples": "mocha --timeout=30000 ./tests/basicExamples.js",
-    "waitsExamples": "mocha --timeout=30000 ./tests/waitsExamples.js"
+		"waitsExamples": "mocha --timeout=30000 ./tests/waitsExamples.js",
+		"attributesExamples": "mocha --timeout=30000 ./tests/attributesExamples.js"
 	},
 	"repository": {
 		"type": "git",
