@@ -1,10 +1,11 @@
 import puppeteer from 'puppeteer';
+import puppeteerFirefox from 'puppeteer-firefox';
 import { expect } from 'chai';
 
 const iPhone = puppeteer.devices['iPhone 6'];
 
 describe('Basic Examples', () => {
-	it('Launch the browser', async () => {
+	it('Launch the browser in Chronium', async () => {
 		const browser = await puppeteer.launch({
 			headless: false,
 			slowMo: 500,
@@ -15,8 +16,10 @@ describe('Basic Examples', () => {
 		await browser.close();
 	});
 
-	it('Launch the browser same tab', async () => {
+	it('Launch the browser same tab in Chrome', async () => {
 		const browser = await puppeteer.launch({
+			executablePath:
+				'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
 			headless: false,
 			slowMo: 500,
 			devtools: false,
@@ -39,8 +42,8 @@ describe('Basic Examples', () => {
 		await browser.close();
 	});
 
-	it('Chai Assertions Exmaple', async () => {
-		const browser = await puppeteer.launch({
+	it('Chai Assertions Example in firefox', async () => {
+		const browser = await puppeteerFirefox.launch({
 			headless: false,
 			slowMo: 500,
 			devtools: false,
