@@ -1,6 +1,7 @@
-const puppeteer = require('puppeteer');
+import puppeteer from 'puppeteer';
+import { expect } from 'chai';
+
 const iPhone = puppeteer.devices['iPhone 6'];
-const expect = require('chai').expect;
 
 describe('Basic Examples', () => {
 	it('Launch the browser', async () => {
